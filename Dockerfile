@@ -16,3 +16,6 @@ RUN apt-get update && \
 RUN git clone -b php7 https://github.com/phpredis/phpredis.git
 RUN cd phpredis && phpize && ./configure && make && make install && cd .. && rm -rf ./phpredis
 RUN echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
+
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
