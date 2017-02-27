@@ -20,3 +20,4 @@ RUN echo "memory_limit=256M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
+RUN composer global require "hirak/prestissimo:^0.3"
